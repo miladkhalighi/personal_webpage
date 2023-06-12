@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/view/home_screen.dart';
 
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         textTheme: TextTheme(
-          headlineLarge: TextStyle()
+          headlineLarge: GoogleFonts.jua(fontSize: 64,color: AppColors.onSecondary),
+          headlineMedium: GoogleFonts.jua(fontSize: 36,color: AppColors.textPrimary),
+          bodyLarge: GoogleFonts.jetBrainsMono(fontSize: 20,color: AppColors.textPrimary)
         )
       ),
       home: const HomeScreen(),
