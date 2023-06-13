@@ -5,6 +5,7 @@ import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/view/home_screen/home_screen.dart';
 import 'package:personal_webpage/view/projects_screen/projects_screen.dart';
 import 'package:personal_webpage/view/root_navigator/root_navigator.dart';
+import 'package:personal_webpage/view/services_screen/services_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: GoogleFonts.jetBrainsMono(fontSize: 16,color: AppColors.textPrimary.withOpacity(0.9),fontWeight: FontWeight.w300,),
         )
       ),
-      home: const ProjectsScreen(),
+      home: const ServicesScreen(),
     );
   }
 }

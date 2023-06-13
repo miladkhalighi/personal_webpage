@@ -19,6 +19,11 @@ class AppTextStyles {
     color: AppColors.headerMediumColor,
     fontSize: 28,
   );
+    static TextStyle titleSmall = TextStyle(
+    fontFamily: GoogleFonts.jua().fontFamily,
+    color: AppColors.headerMediumColor,
+    fontSize: 22,
+  );
   static TextStyle titleLarge = TextStyle(
     fontFamily: GoogleFonts.jua().fontFamily,
     color: AppColors.onSecondary,

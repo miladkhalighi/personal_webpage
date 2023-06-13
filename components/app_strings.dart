@@ -8,4 +8,6 @@ class AppStrings {
   static String projectsTitleSuffix = 'Projects';
   static String projectsGithubMsg = 'Most of the projects I have developed are completely open-source on my GitHub.';
   static String githubSourceButton = 'Source code';
+  static String servicesTitle = 'My services';
+  static String servicesSubTitle = 'What I offer';
 }
