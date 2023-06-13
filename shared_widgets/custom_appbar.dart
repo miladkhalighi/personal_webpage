@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_webpage/shared_widgets/custom_button.dart';
 
 import '../components/app_dimentions.dart';
-import '../view/item_navigation_bar.dart';
+import '../view/root_navigator/item_navigation_bar.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({super.key});
