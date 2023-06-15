@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,12 +37,31 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Expanded(
-                      flex: 1,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          RichText(
+                      child: contentSide()),
+                  Expanded(
+                      child: ZoomIn(
+                        child: Image.asset(
+                          'assets/images/profile_img.png',
+                          fit: BoxFit.cover,
+                        ),
+                      )),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Column contentSide() {
+    return Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FadeInDown(
+                          delay: const Duration(milliseconds: 200),
+                          child: RichText(
                             text: TextSpan(
                                 text: 'Hello, ',
                                 style: AppTextStyles.bodyLarge,
@@ -58,24 +78,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       style: AppTextStyles.titleMedium),
                                 ]),
                           ),
+                        ),
 
-                          Text(AppStrings.introduceMyself),
-                          //CustomButton(title: 'Hire me', onPressed: (){}),
-                          const SocialButtons(),
-                        ],
-                      )),
-                  Expanded(
-                      flex: 1,
-                      child: Image.asset(
-                        'assets/images/profile_img.png',
-                        fit: BoxFit.cover,
-                      )),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+                        FadeInDown(
+                          delay: const Duration(milliseconds: 400),
+                          child: Text(AppStrings.introduceMyself)),
+                        FadeInLeftBig(delay: const Duration(milliseconds: 800),child: const SocialButtons()),
+                      ],
+                    );
   }
 }
