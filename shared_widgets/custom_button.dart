@@ -5,22 +5,19 @@ import 'package:personal_webpage/controller/custom_button_controller.dart';
 import '../components/app_colors.dart';
 import '../components/app_dimentions.dart';
 
-class CustomButton extends StatefulWidget {
+class CustomButton extends StatelessWidget {
   final String title;
   final Function() onPressed;
   const CustomButton({super.key, required this.title, required this.onPressed});
 
   @override
-  State<CustomButton> createState() => _CustomButtonState();
-}
-
-class _CustomButtonState extends State<CustomButton> {
-  final controller = Get.put(CustomButtonController());
-  @override
   Widget build(BuildContext context) {
+    final controller =
+        Get.put(CustomButtonController(), tag: UniqueKey().toString());
+    //! I used tag to make multiple instanse of my controller otherwise we have a singelton instance !//
     return Obx(
       () => InkWell(
-        onTap: widget.onPressed,
+        onTap: onPressed,
         onHover: (value) {
           controller.hovering = value ? true : false;
         },
@@ -42,15 +39,16 @@ class _CustomButtonState extends State<CustomButton> {
                 BoxShadow(
                     color: AppColors.onSecondary.withOpacity(0.5),
                     blurRadius: controller.hovering ? 0 : 2,
-                    offset: Offset(controller.hovering ? 0 : 5, controller.hovering ? 0 : 4),
+                    offset: Offset(controller.hovering ? 0 : 5,
+                        controller.hovering ? 0 : 4),
                     blurStyle: BlurStyle.solid)
               ],
               borderRadius: BorderRadius.circular(100)),
           child: Center(
               child: Text(
-                        widget.title,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      )),
+            title,
+            style: Theme.of(context).textTheme.bodyMedium,
+          )),
         ),
       ),
     );
