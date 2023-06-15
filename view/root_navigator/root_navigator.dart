@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:personal_webpage/shared_widgets/custom_appbar.dart';
+import 'package:personal_webpage/view/about_me_screen/about_me_screen.dart';
 import 'package:personal_webpage/view/home_screen/home_screen.dart';
 import 'package:personal_webpage/view/projects_screen/projects_screen.dart';
+import 'package:personal_webpage/view/services_screen/services_screen.dart';
 
 class RootNavigator extends StatefulWidget {
   const RootNavigator({super.key});
@@ -12,24 +14,12 @@ class RootNavigator extends StatefulWidget {
 
 class _RootNavigatorState extends State<RootNavigator> {
   int _pageSelectedIndex = 0;
+  
   List<Widget> pages = [
     const HomeScreen(),
     const ProjectsScreen(),
-    Container(
-      width: double.infinity,
-      height: 500,
-      color: Colors.green,
-    ),
-    Container(
-      width: double.infinity,
-      height: 500,
-      color: Colors.red,
-    ),
-    Container(
-      width: double.infinity,
-      height: 500,
-      color: Colors.yellow,
-    ),
+    const ServicesScreen(),
+    const AboutMeScreen()
   ];
 
   @override

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../components/app_colors.dart';
@@ -27,13 +26,19 @@ class _CustomProgressBarState extends State<CustomProgressBar>
   void initState() {
     super.initState();
     animCtr = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2000));
+        vsync: this, duration: const Duration(milliseconds: 2500));
     animation = Tween<double>(begin: 0, end: widget.progress).animate(animCtr)
       ..addListener(() {
         setState(() {});
       });
 
     animCtr.forward();
+  }
+
+  @override
+  void dispose() {
+    animCtr.dispose();
+    super.dispose();
   }
 
   @override
@@ -45,7 +50,7 @@ class _CustomProgressBarState extends State<CustomProgressBar>
           children: [
             Container(
               height: size.height * 0.06,
-              width: size.width / 2.5,
+              width: size.width / 3,
               decoration: BoxDecoration(
                 color: AppColors.onPrimary,
                 borderRadius: BorderRadius.circular(25),
@@ -62,9 +67,9 @@ class _CustomProgressBarState extends State<CustomProgressBar>
                         borderRadius: BorderRadius.circular(25),
                         boxShadow: [
                           BoxShadow(
-                              color: AppColors.secondary,
-                              blurRadius: 8,
-                              offset: const Offset(4, 0))
+                              color: AppColors.onSecondary,
+                              blurRadius: 2,
+                              offset: const Offset(0, 0))
                         ]),
                   ),
                 ),

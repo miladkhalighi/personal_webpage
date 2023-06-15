@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_webpage/components/app_colors.dart';
+import 'package:personal_webpage/view/about_me_screen/about_me_screen.dart';
 import 'package:personal_webpage/view/home_screen/home_screen.dart';
 import 'package:personal_webpage/view/projects_screen/projects_screen.dart';
 import 'package:personal_webpage/view/root_navigator/root_navigator.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: GoogleFonts.jetBrainsMono(fontSize: 16,color: AppColors.textPrimary.withOpacity(0.9),fontWeight: FontWeight.w300,),
         )
       ),
-      home: const ServicesScreen(),
+      home: const RootNavigator(),
     );
   }
 }
