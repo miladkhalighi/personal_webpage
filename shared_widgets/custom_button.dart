@@ -39,9 +39,16 @@ class CustomButton extends StatelessWidget {
                 BoxShadow(
                     color: AppColors.onSecondary.withOpacity(0.5),
                     blurRadius: controller.hovering ? 0 : 2,
-                    offset: Offset(controller.hovering ? 0 : 5,
+                    offset: Offset(controller.hovering ? 0 : 4,
                         controller.hovering ? 0 : 4),
-                    blurStyle: BlurStyle.solid)
+                    blurStyle: BlurStyle.solid),
+
+                                    BoxShadow(
+                    color: AppColors.onSecondary.withOpacity(0.2),
+                    blurRadius: controller.hovering ? 0 : 2,
+                    offset: Offset(controller.hovering ? 0 : 8,
+                        controller.hovering ? 0 : 8),
+                    blurStyle: BlurStyle.solid),
               ],
               borderRadius: BorderRadius.circular(100)),
           child: Center(
