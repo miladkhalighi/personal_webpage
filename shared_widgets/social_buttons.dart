@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:personal_webpage/controller/url_launcher_controller.dart';
 
 import '../components/app_dimentions.dart';
 import '../components/app_strings.dart';
@@ -9,6 +11,7 @@ class SocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(UrlLauncherController());
     return Row(
       children: [
         Text(AppStrings.socialsText),
@@ -17,21 +20,27 @@ class SocialButtons extends StatelessWidget {
         ),
         CustomIconButton(
           iconPath: 'assets/images/github.svg',
-          onTap: () {},
+          onTap: () {
+            controller.launchGithub();
+          },
         ),
         SizedBox(
           width: AppDimentions.medium,
         ),
         CustomIconButton(
           iconPath: 'assets/images/instagram.svg',
-          onTap: () {},
+          onTap: () {
+            controller.launchInstagram();
+          },
         ),
         SizedBox(
           width: AppDimentions.medium,
         ),
         CustomIconButton(
           iconPath: 'assets/images/linkedin.svg',
-          onTap: () {},
+          onTap: () {
+            controller.launchLinkedin();
+          },
         ),
         SizedBox(
           width: AppDimentions.medium,
