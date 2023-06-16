@@ -1,5 +1,5 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/components/app_dimentions.dart';
 import 'package:personal_webpage/components/app_strings.dart';
@@ -23,12 +23,15 @@ class ServicesScreen extends StatelessWidget {
           ),
           Text(
             AppStrings.servicesTitle,
-            style: AppTextStyles.titleMedium,
+            style: AppTextStyles.bodyMedium,
             textAlign: TextAlign.center,
+          ),
+                    SizedBox(
+            height: size.height * 0.01,
           ),
           Text(
             AppStrings.servicesSubTitle,
-            style: AppTextStyles.titleLarge,
+            style: AppTextStyles.titleMedium.copyWith(color: AppColors.onSecondary),
             textAlign: TextAlign.center,
           ),
           SizedBox(
@@ -38,15 +41,21 @@ class ServicesScreen extends StatelessWidget {
             child: Padding(
                 padding: EdgeInsets.all(AppDimentions.large),
                 child: GridView.builder(
+                  padding: EdgeInsets.symmetric(horizontal: size.width*0.1),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: myServices.length,
-                      childAspectRatio: 1 / 1.7),
+                      crossAxisCount: size.width<600 ? 1 : size.width<700 ? 2 : size.width<900 ? 3 : 4,
+                      childAspectRatio: size.width<600 ? 1 : 1/1.6
+                  ),
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.all(AppDimentions.small),
-                      child: ServiceCard(
-                        service: myServices[index],
-                        onTap: () {},
+                      child: ZoomIn(
+                        child: FadeInDown(
+                          child: ServiceCard(
+                            service: myServices[index],
+                            onTap: () {},
+                          ),
+                        ),
                       ),
                     );
                   },
