@@ -46,49 +46,51 @@ class _CustomProgressBarState extends State<CustomProgressBar>
     var size = MediaQuery.of(context).size;
     return Row(
       children: [
-        Stack(
-          children: [
-            Container(
-              height: size.height * 0.06,
-              width: size.width / 3,
-              decoration: BoxDecoration(
-                color: AppColors.onPrimary,
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: animation.value,
-                child: FractionallySizedBox(
-                  alignment: Alignment.centerLeft,
-                  widthFactor: animation.value,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: AppColors.secondary,
-                        borderRadius: BorderRadius.circular(25),
-                        boxShadow: [
-                          BoxShadow(
-                              color: AppColors.onSecondary,
-                              blurRadius: 2,
-                              offset: const Offset(0, 0))
-                        ]),
+        Expanded(
+          child: Stack(
+            children: [
+              Container(
+                height: size.height * 0.06,
+                width: double.maxFinite,
+                decoration: BoxDecoration(
+                  color: AppColors.onPrimary,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 200),
+                  opacity: animation.value,
+                  child: FractionallySizedBox(
+                    alignment: Alignment.centerLeft,
+                    widthFactor: animation.value,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: AppColors.secondary,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                                color: AppColors.onSecondary,
+                                blurRadius: 2,
+                                offset: const Offset(0, 0))
+                          ]),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              left: AppDimentions.medium,
-              top: 0,
-              bottom: 0,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  widget.title,
-                  style: AppTextStyles.bodyMedium
-                      .copyWith(color: AppColors.onSecondary),
+              Positioned(
+                left: AppDimentions.medium,
+                top: 0,
+                bottom: 0,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    widget.title,
+                    style: AppTextStyles.bodyMedium
+                        .copyWith(color: AppColors.onSecondary),
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
         SizedBox(
           width: AppDimentions.medium,
