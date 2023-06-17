@@ -14,6 +14,8 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
           color: AppColors.onPrimary,
           borderRadius: BorderRadius.circular(16),

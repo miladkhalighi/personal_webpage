@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/components/app_text_styles.dart';
+import 'package:personal_webpage/controller/url_launcher_controller.dart';
 import 'package:personal_webpage/model/project.dart';
 import 'package:personal_webpage/shared_widgets/custom_button.dart';
 import 'package:personal_webpage/view/projects_screen/project_card.dart';
@@ -15,7 +17,7 @@ class ProjectsScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Align(
@@ -34,7 +36,7 @@ class ProjectsScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: size.height / 2,
+            height: size.height / 2.3,
             child: CarouselSlider.builder(
                 itemCount: myProjects.length,
                 itemBuilder:
@@ -46,25 +48,31 @@ class ProjectsScreen extends StatelessWidget {
                   enlargeCenterPage: true,
                   enlargeFactor: 0.4,
                   autoPlay: true,
-                  viewportFraction: 0.55,
+                  viewportFraction: 0.45,
                   onPageChanged: (index, reason) {
                     //Todo
                   },
-                  
                 )),
           ),
-          Text(AppStrings.projectsGithubMsg,textAlign: TextAlign.center,),
+          Text(
+            AppStrings.projectsGithubMsg,
+            textAlign: TextAlign.center,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomButton(
-                  title: AppStrings.githubSourceButton, onPressed: () {}),
+                  title: AppStrings.githubSourceButton,
+                  onPressed: () {
+                    Get.put(UrlLauncherController()).launchGithub();
+                  }),
             ],
           ),
+          SizedBox(
+            height: size.height * 0.1,
+          )
         ],
       ),
     );
   }
 }
-
-

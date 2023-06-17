@@ -29,6 +29,13 @@ List<Project> myProjects = [
     'assets/images/projects_img/movie_2.png',
     'assets/images/projects_img/movie_3.png',
     'assets/images/projects_img/movie_4.png',
+  ]),
+    
+  Project(title: 'Smart Home', imgPaths: [
+    'assets/images/projects_img/smart_home_1.png',
+    'assets/images/projects_img/smart_home_2.png',
+    'assets/images/projects_img/smart_home_3.png',
+    'assets/images/projects_img/smart_home_4.png',
 
   ]),
   Project(title: 'Food Delivery', imgPaths: [
@@ -37,4 +44,21 @@ List<Project> myProjects = [
     'assets/images/projects_img/food_delivery_3.png',
     'assets/images/projects_img/food_delivery_4.png'
   ]),
+
+  Project(title: 'Uber', imgPaths: [
+    'assets/images/projects_img/uber_1.png',
+    'assets/images/projects_img/uber_2.png',
+    'assets/images/projects_img/uber_3.png',
+    'assets/images/projects_img/uber_4.png'
+  ]),  
+  Project(title: 'Streaming App', imgPaths: [
+    'assets/images/projects_img/streaming_1.png',
+    'assets/images/projects_img/streaming_2.png',
+  ]),  
+
+    Project(title: 'Puppy dress shop', imgPaths: [
+    'assets/images/projects_img/puppy_1.png',
+    'assets/images/projects_img/puppy_2.png',
+  ]),  
+
 ];
