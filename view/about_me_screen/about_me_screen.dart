@@ -1,7 +1,5 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/components/app_dimentions.dart';
 import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/components/app_text_styles.dart';
@@ -16,58 +14,86 @@ class AboutMeScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Row(
-          children: [
-            SizedBox(
-              width: size.width * 0.03,
-            ),
-            Expanded(
-                child: contentSide(size)),
-            SizedBox(
-              width: size.width * 0.05,
-            ),
-            Expanded(child: skillSide(size)),
-            SizedBox(
-              width: size.width * 0.03,
-            ),
-          ],
-        ),
+        child: size.width < 600 ? smallScreenShow(size) : wideScreenShow(size),
+      ),
+    );
+  }
+
+  Widget wideScreenShow(Size size) {
+    return Padding(
+      padding: EdgeInsets.all(size.width*0.05),
+      child: Row(
+        children: [
+          SizedBox(
+            width: size.width * 0.03,
+          ),
+          Expanded(child: contentSide(size)),
+          SizedBox(
+            width: size.width * 0.05,
+          ),
+          Expanded(child: skillSide(size)),
+          SizedBox(
+            width: size.width * 0.03,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget smallScreenShow(Size size) {
+    return Padding(
+      padding: EdgeInsets.all(size.width * 0.1),
+      child: Column(
+        children: [
+          SizedBox(
+            width: size.width * 0.03,
+          ),
+          skillSide(size),
+          SizedBox(
+            width: size.width * 0.05,
+          ),
+          contentSide(size),
+          SizedBox(
+            width: size.width * 0.03,
+          ),
+        ],
       ),
     );
   }
 
   Column contentSide(Size size) {
     return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Image.asset(
-                      'assets/images/graduation_hat.png',
-                      width: size.width * 0.2 + size.height * 0.1,
-                      //height: size.width * 0.2 + size.height * 0.1,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Positioned(
-                    bottom: AppDimentions.large,
-                    child: FadeInDown(
-                      child: Text.rich(
-                          TextSpan(text: "Working Since ", children: [
-                        TextSpan(text: "2016", style: AppTextStyles.titleLarge)
-                      ])),
-                    ),
-                  ),
-                ],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Image.asset(
+                'assets/images/graduation_hat.png',
+                width: size.width * 0.2 + size.height * 0.1,
+                //height: size.width * 0.2 + size.height * 0.1,
+                fit: BoxFit.contain,
               ),
-              SizedBox(
-                height: size.height * 0.1,
+            ),
+            Positioned(
+              bottom: AppDimentions.large,
+              child: FadeInDown(
+                child: Text.rich(TextSpan(text: "Working Since ", children: [
+                  TextSpan(text: "2016", style: AppTextStyles.titleLarge)
+                ])),
               ),
-              FadeInDown(delay: const Duration(milliseconds: 500),child: Text(AppStrings.skillsContent)),
-            ],
-          );
+            ),
+          ],
+        ),
+        SizedBox(
+          height: size.height * 0.1,
+        ),
+        FadeInDown(
+            delay: const Duration(milliseconds: 500),
+            child: Text(AppStrings.skillsContent)),
+      ],
+    );
   }
 
   Column skillSide(Size size) {
