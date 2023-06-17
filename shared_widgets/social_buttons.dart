@@ -12,20 +12,17 @@ class SocialButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(UrlLauncherController());
-    return Row(
+    return Wrap(
+      spacing: AppDimentions.medium,
+      runSpacing: AppDimentions.medium,
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
         Text(AppStrings.socialsText),
-        SizedBox(
-          width: AppDimentions.large,
-        ),
         CustomIconButton(
           iconPath: 'assets/images/github.svg',
           onTap: () {
             controller.launchGithub();
           },
-        ),
-        SizedBox(
-          width: AppDimentions.medium,
         ),
         CustomIconButton(
           iconPath: 'assets/images/instagram.svg',
@@ -33,17 +30,11 @@ class SocialButtons extends StatelessWidget {
             controller.launchInstagram();
           },
         ),
-        SizedBox(
-          width: AppDimentions.medium,
-        ),
         CustomIconButton(
           iconPath: 'assets/images/linkedin.svg',
           onTap: () {
             controller.launchLinkedin();
           },
-        ),
-        SizedBox(
-          width: AppDimentions.medium,
         ),
       ],
     );
