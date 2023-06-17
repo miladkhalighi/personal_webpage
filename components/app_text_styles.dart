@@ -41,4 +41,11 @@ class AppTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w300
   );
+
+    static TextStyle textButton = TextStyle(
+    fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
+    color: AppColors.primary,
+    fontSize: 16,
+    fontWeight: FontWeight.bold
+  );
 }
