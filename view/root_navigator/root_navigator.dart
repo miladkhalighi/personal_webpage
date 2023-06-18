@@ -27,9 +27,10 @@ class _RootNavigatorState extends State<RootNavigator> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(showButton: size.width<600 ? false : true,),
       body: Column(
         children: [
           //const CustomAppBar(),

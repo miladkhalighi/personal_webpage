@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:personal_webpage/components/app_text_styles.dart';
 import 'package:personal_webpage/controller/custom_button_controller.dart';
 
 import '../components/app_colors.dart';
@@ -54,7 +55,7 @@ class CustomButton extends StatelessWidget {
           child: Center(
               child: Text(
             title,
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppTextStyles.textButton,
           )),
         ),
       ),

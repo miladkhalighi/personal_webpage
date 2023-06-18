@@ -50,11 +50,9 @@ class ServicesScreen extends StatelessWidget {
                     return Padding(
                       padding: EdgeInsets.all(AppDimentions.small),
                       child: ZoomIn(
-                        child: FadeInDown(
-                          child: ServiceCard(
-                            service: myServices[index],
-                            onTap: () {},
-                          ),
+                        child: ServiceCard(
+                          service: myServices[index],
+                          onTap: () {},
                         ),
                       ),
                     );

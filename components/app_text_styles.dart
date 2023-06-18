@@ -6,23 +6,23 @@ class AppTextStyles {
   AppTextStyles._();
 
   static TextStyle appBarSelectedItemNavigation = TextStyle(
-      fontFamily: GoogleFonts.inknutAntiqua().fontFamily,
+      fontFamily: GoogleFonts.orbitron().fontFamily,
       color: AppColors.appBarItemNavigationTextSelectedColor,
-      fontSize: 16);
+      fontSize: 14);
   static TextStyle appBarUnSelectedItemNavigation = TextStyle(
-      fontFamily: GoogleFonts.inknutAntiqua().fontFamily,
+      fontFamily: GoogleFonts.orbitron().fontFamily,
       color: AppColors.appBarItemNavigationTextUnSelectedColor,
-      fontSize: 16);
+      fontSize: 14);
 
   static TextStyle titleMedium = TextStyle(
     fontFamily: GoogleFonts.jua().fontFamily,
     color: AppColors.headerMediumColor,
-    fontSize: 28,
+    fontSize: 26,
   );
     static TextStyle titleSmall = TextStyle(
     fontFamily: GoogleFonts.jua().fontFamily,
     color: AppColors.headerMediumColor,
-    fontSize: 22,
+    fontSize: 20,
   );
   static TextStyle titleLarge = TextStyle(
     fontFamily: GoogleFonts.jua().fontFamily,
@@ -33,19 +33,26 @@ class AppTextStyles {
   static TextStyle bodyLarge = TextStyle(
     fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
     color: AppColors.textPrimary,
-    fontSize: 20,
+    fontSize: 16,
   );
     static TextStyle bodyMedium = TextStyle(
     fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
     color: AppColors.textPrimary.withOpacity(0.9),
-    fontSize: 16,
+    fontSize: 14,
+    fontWeight: FontWeight.w300
+  );
+
+      static TextStyle bodySmall = TextStyle(
+    fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
+    color: AppColors.textPrimary.withOpacity(0.9),
+    fontSize: 12,
     fontWeight: FontWeight.w300
   );
 
     static TextStyle textButton = TextStyle(
     fontFamily: GoogleFonts.jetBrainsMono().fontFamily,
-    color: AppColors.primary,
-    fontSize: 16,
-    fontWeight: FontWeight.bold
+    color: AppColors.textButtonColor,
+    fontSize: 14,
+    //fontWeight: FontWeight.bold
   );
 }

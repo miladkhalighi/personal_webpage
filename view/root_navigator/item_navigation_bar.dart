@@ -25,38 +25,33 @@ class ItemNavigationBar extends StatelessWidget {
       onTap: onTap,
       onHover: onHover,
       splashColor: AppColors.splashColor,
-      child: Container(
-        padding: EdgeInsets.all(AppDimentions.small),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDimentions.borderRaduis)
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: selected ? AppTextStyles.appBarSelectedItemNavigation : AppTextStyles.appBarUnSelectedItemNavigation,
+      child: Column(
+        //crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            title,
+            style: selected ? AppTextStyles.appBarSelectedItemNavigation : AppTextStyles.appBarUnSelectedItemNavigation,
+          ),
+          SizedBox(
+            height: AppDimentions.small,
+          ),
+          AnimatedContainer(
+            height: 3,
+            width: hovering ? AppDimentions.large*3 : 0,
+            decoration: BoxDecoration(
+              color: hovering
+                  ? AppColors.appBarItemNavigationDividerColor
+                  : Colors.transparent,
+                  borderRadius: BorderRadius.circular(AppDimentions.borderRaduis),
+               boxShadow: [
+                BoxShadow(color: AppColors.appBarItemNavigationDividerColor,blurRadius: 16,offset: const Offset(2, 2))
+               ]   
             ),
-            SizedBox(
-              height: AppDimentions.small,
-            ),
-            AnimatedContainer(
-              height: 3,
-              width: hovering ? AppDimentions.large*3 : 0,
-              decoration: BoxDecoration(
-                color: hovering
-                    ? AppColors.appBarItemNavigationDividerColor
-                    : Colors.transparent,
-                    borderRadius: BorderRadius.circular(AppDimentions.borderRaduis),
-                 boxShadow: [
-                  BoxShadow(color: AppColors.appBarItemNavigationDividerColor,blurRadius: 16,offset: const Offset(2, 2))
-                 ]   
-              ),
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-            )
-          ],
-        ),
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          )
+        ],
       ),
     );
   }

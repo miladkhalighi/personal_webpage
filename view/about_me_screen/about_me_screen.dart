@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_webpage/components/app_dimentions.dart';
 import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/components/app_text_styles.dart';
+import 'package:personal_webpage/view/footer.dart';
 
 import '../../shared_widgets/custom_progress_bar.dart';
 
@@ -114,15 +115,15 @@ class AboutMeScreen extends StatelessWidget {
         SizedBox(
           height: size.height * 0.05,
         ),
-        const CustomProgressBar(title: 'Dart', progress: 0.9),
+        const CustomProgressBar(title: 'Dart', progress: 0.95),
         SizedBox(height: AppDimentions.medium),
-        const CustomProgressBar(title: 'Swift', progress: 0.7),
+        const CustomProgressBar(title: 'Swift', progress: 0.8),
         SizedBox(height: AppDimentions.medium),
         const CustomProgressBar(title: 'C/C++', progress: 0.75),
         SizedBox(height: AppDimentions.medium),
         const CustomProgressBar(title: 'Java', progress: 0.65),
         SizedBox(height: AppDimentions.medium),
-        const CustomProgressBar(title: 'Kotlin', progress: 0.55),
+        const CustomProgressBar(title: 'Kotlin', progress: 0.6),
         SizedBox(height: AppDimentions.medium),
         const CustomProgressBar(title: 'Figma', progress: 0.7),
         SizedBox(height: AppDimentions.medium),

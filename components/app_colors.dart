@@ -16,4 +16,7 @@ class AppColors {
   static var appBarItemNavigationBgSelected =
       const Color(0xFFD4ADFC).withAlpha(50);
   static var splashColor = const Color(0xFFD4ADFC).withAlpha(30);
+
+  static var appBarColor = const Color(0xFF1D267D);
+  static var textButtonColor = const Color.fromARGB(255, 227, 227, 227);
 }

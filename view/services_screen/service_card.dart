@@ -90,7 +90,7 @@ class ServiceCard extends StatelessWidget {
                         ),
                         Text(
                           service.name,
-                          style: AppTextStyles.titleSmall,
+                          style: AppTextStyles.titleSmall.copyWith(color: AppColors.onSecondary),
                           overflow: TextOverflow.ellipsis,
                         ),
                         SizedBox(
@@ -101,7 +101,7 @@ class ServiceCard extends StatelessWidget {
                         Expanded(
                           child: Text(
                             service.description,
-                            style: AppTextStyles.bodyMedium,
+                            style: AppTextStyles.bodySmall,
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 20,
