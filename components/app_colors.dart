@@ -20,4 +20,6 @@ class AppColors {
   static var appBarColor = const Color(0xFF1D267D);
   static var textButtonColor = const Color.fromARGB(255, 227, 227, 227);
   static var cardBackground = const Color(0xFF303669);
+  static var progressBarFill = const Color(0xFF5C469C);
+  static var progressBarBackground = const Color(0xFF303669);
 }

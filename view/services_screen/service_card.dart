@@ -37,11 +37,11 @@ class ServiceCard extends StatelessWidget {
                 Positioned.fill(
                     child: Container(
                   decoration: BoxDecoration(
-                      color: AppColors.onPrimary,
+                      color: AppColors.cardBackground,
                       borderRadius: BorderRadius.circular(16),
                       border: Border.all(color: AppColors.primary, width: 3),
                       boxShadow: [
-                        BoxShadow(color: AppColors.onPrimary, blurRadius: 4)
+                        BoxShadow(color: AppColors.cardBackground, blurRadius: 4)
                       ]),
                 )),
                 Positioned(

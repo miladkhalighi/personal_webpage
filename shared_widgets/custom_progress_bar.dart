@@ -53,26 +53,17 @@ class _CustomProgressBarState extends State<CustomProgressBar>
                 height: size.height * 0.06,
                 width: double.maxFinite,
                 decoration: BoxDecoration(
-                  color: AppColors.onPrimary,
+                  color: AppColors.progressBarBackground,
                   borderRadius: BorderRadius.circular(25),
                 ),
-                child: AnimatedOpacity(
-                  duration: const Duration(milliseconds: 200),
-                  opacity: animation.value,
-                  child: FractionallySizedBox(
-                    alignment: Alignment.centerLeft,
-                    widthFactor: animation.value,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: AppColors.secondary,
-                          borderRadius: BorderRadius.circular(25),
-                          boxShadow: [
-                            BoxShadow(
-                                color: AppColors.onSecondary,
-                                blurRadius: 2,
-                                offset: const Offset(0, 0))
-                          ]),
-                    ),
+                child: FractionallySizedBox(
+                  alignment: Alignment.centerLeft,
+                  widthFactor: animation.value,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: AppColors.progressBarFill,
+                        borderRadius: BorderRadius.circular(25),
+                        ),
                   ),
                 ),
               ),
