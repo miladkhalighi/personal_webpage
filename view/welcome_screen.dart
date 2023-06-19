@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:personal_webpage/view/root_navigator/root_navigator.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   late Timer timer;
   @override
   void initState() {
-    timer = Timer(const Duration(seconds: 3), () {
+    timer = Timer(const Duration(seconds: 4), () {
       Get.off(const RootNavigator());
     });
     super.initState();
@@ -23,10 +24,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("WELCOME"),
-      ),
+    return Scaffold(
+      body: Center(child: Lottie.asset('assets/lottie/loading.json')),
     );
   }
 }
