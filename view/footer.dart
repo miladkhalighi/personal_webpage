@@ -9,14 +9,9 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        height: size.height/2,
+    return Container(
+        height: size.height/3,
         color: AppColors.onSecondary,
-      ),
-    );
+      );
   }
 }
-
-
-

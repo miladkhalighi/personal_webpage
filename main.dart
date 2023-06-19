@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:personal_webpage/components/app_colors.dart';
-import 'package:personal_webpage/view/about_me_screen/about_me_screen.dart';
-import 'package:personal_webpage/view/footer.dart';
-import 'package:personal_webpage/view/home_screen/home_screen.dart';
-import 'package:personal_webpage/view/projects_screen/projects_screen.dart';
-import 'package:personal_webpage/view/root_navigator/root_navigator.dart';
-import 'package:personal_webpage/view/services_screen/services_screen.dart';
+import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/view/welcome_screen.dart';
 
 void main() {
@@ -22,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Personal Webpage',
+      title: AppStrings.appTitle,
       theme: ThemeData(
         appBarTheme: AppBarTheme(backgroundColor: AppColors.primary),
         scaffoldBackgroundColor: AppColors.primary,
@@ -35,7 +30,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: GoogleFonts.jetBrainsMono(fontSize: 16,color: AppColors.textPrimary.withOpacity(0.9),fontWeight: FontWeight.w300,),
         )
       ),
-      home: const RootNavigator(),
+      home: const WelcomeScreen(),
     );
   }
 }

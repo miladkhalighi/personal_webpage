@@ -19,4 +19,5 @@ class AppStrings {
       "With a strong educational background in computer engineering, I have developed a diverse skill set in software development and engineering. My Bachelor's Degree in Computer Engineering serves as a solid foundation for my expertise in the field.";
   static String readMore = "Read more";
   static String hireMe = "Hire me";
+  static String appTitle = "Milad Khalighi | Mobile developer | Software Engineer";
 }
