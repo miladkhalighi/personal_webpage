@@ -31,7 +31,7 @@ List<Project> myProjects = [
     'assets/images/projects_img/movie_4.png',
   ]),
     
-  Project(title: 'Smart Home', imgPaths: [
+  Project(title: 'Smart Home SAF', imgPaths: [
     'assets/images/projects_img/smart_home_1.png',
     'assets/images/projects_img/smart_home_2.png',
     'assets/images/projects_img/smart_home_3.png',
@@ -45,7 +45,7 @@ List<Project> myProjects = [
     'assets/images/projects_img/food_delivery_4.png'
   ]),
 
-  Project(title: 'Uber', imgPaths: [
+  Project(title: 'Uber driver', imgPaths: [
     'assets/images/projects_img/uber_1.png',
     'assets/images/projects_img/uber_2.png',
     'assets/images/projects_img/uber_3.png',

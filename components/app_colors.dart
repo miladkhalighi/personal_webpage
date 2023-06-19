@@ -19,4 +19,5 @@ class AppColors {
 
   static var appBarColor = const Color(0xFF1D267D);
   static var textButtonColor = const Color.fromARGB(255, 227, 227, 227);
+  static var cardBackground = const Color(0xFF303669);
 }

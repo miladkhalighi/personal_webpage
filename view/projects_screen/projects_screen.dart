@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/components/app_text_styles.dart';
+import 'package:personal_webpage/controller/project_card_controller.dart';
 import 'package:personal_webpage/controller/url_launcher_controller.dart';
 import 'package:personal_webpage/model/project.dart';
 import 'package:personal_webpage/shared_widgets/custom_button.dart';
@@ -41,7 +42,16 @@ class ProjectsScreen extends StatelessWidget {
                 itemCount: myProjects.length,
                 itemBuilder:
                     (BuildContext context, int itemIndex, int pageViewIndex) {
-                  return ProjectCard(project: myProjects[itemIndex]);
+                  return Obx(
+                    () => ProjectCard(
+                      project: myProjects[itemIndex],
+                      onTap: () {
+                        //print(myProjects[itemIndex]);
+                      },
+                      selected: itemIndex ==
+                          Get.put(ProjectCardController()).itemSelectedIndex,
+                    ),
+                  );
                 },
                 options: CarouselOptions(
                   aspectRatio: 2,
@@ -50,7 +60,7 @@ class ProjectsScreen extends StatelessWidget {
                   autoPlay: true,
                   viewportFraction: 0.45,
                   onPageChanged: (index, reason) {
-                    //Todo
+                    Get.put(ProjectCardController()).itemSelectedIndex = index;
                   },
                 )),
           ),
