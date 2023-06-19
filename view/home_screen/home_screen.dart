@@ -1,17 +1,10 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:personal_webpage/components/app_colors.dart';
-import 'package:personal_webpage/components/app_dimentions.dart';
 import 'package:personal_webpage/components/app_strings.dart';
 import 'package:personal_webpage/components/app_text_styles.dart';
 import 'package:personal_webpage/shared_widgets/social_buttons.dart';
-import 'package:personal_webpage/view/root_navigator/item_navigation_bar.dart';
 
-import '../../shared_widgets/custom_appbar.dart';
-import '../../shared_widgets/custom_button.dart';
-import '../../shared_widgets/custom_icon_button.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,17 +26,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget wideScreenShow(Size size) {
     var bodyMargin = size.width * 0.05;
     return Padding(
-      padding: EdgeInsets.all(bodyMargin),
+      padding: EdgeInsets.symmetric(horizontal:bodyMargin),
       child: Row(
         children: [
           Expanded(child: contentSide()),
           Expanded(
-              child: ZoomIn(
+            child: ZoomIn(
             child: Image.asset(
               'assets/images/profile_img.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
-          )),
+                    )),
         ],
       ),
     );

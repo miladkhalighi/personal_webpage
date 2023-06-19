@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:personal_webpage/components/app_colors.dart';
 import 'package:personal_webpage/controller/navigator_controller.dart';
 import 'package:personal_webpage/shared_widgets/custom_appbar.dart';
 import 'package:personal_webpage/view/about_me_screen/about_me_screen.dart';
@@ -20,7 +19,7 @@ class _RootNavigatorState extends State<RootNavigator> {
     const HomeScreen(),
     const ProjectsScreen(),
     const ServicesScreen(),
-    const AboutMeScreen()
+    const AboutMeScreen(),
   ];
 
   var controller = Get.put(NavigatorController());
@@ -29,27 +28,20 @@ class _RootNavigatorState extends State<RootNavigator> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: false,
       appBar: CustomAppBar(showButton: size.width<600 ? false : true,),
-      body: Column(
-        children: [
-          //const CustomAppBar(),
-          Expanded(
-            child: PageView.builder(
-              controller: controller.pageViewController,
-              itemBuilder: (context, index) {
-                return pages[index];
-              },
-              itemCount: pages.length,
-              scrollDirection: Axis.vertical,
-              pageSnapping: false,
-              scrollBehavior: const ScrollBehavior(),
-              onPageChanged: (value) {
-                controller.pageSelectedIndex = value;
-              },
-            ),
-          ),
-        ],
+      body: PageView.builder(
+        controller: controller.pageViewController,
+        itemBuilder: (context, index) {
+          return pages[index];
+        },
+        itemCount: pages.length,
+        scrollDirection: Axis.vertical,
+        pageSnapping: false,
+        scrollBehavior: const ScrollBehavior(),
+        onPageChanged: (value) {
+          controller.pageSelectedIndex = value;
+        },
       ),
     );
   }
