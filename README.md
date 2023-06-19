@@ -1,16 +1,11 @@
-# personal_webpage
+# Personal Web Page
+[👉👉 HAVE A LOOK 👈👈](https://miladkhalighi.github.io/personal_webpage_pwa/)
 
-A new Flutter project.
+This Flutter web app is responsive to different screen sizes, ensuring an optimal viewing experience on various devices. It leverages the GetX package for efficient state management, enabling seamless updates and smooth user interactions.
 
-## Getting Started
+## ScreenShots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![screenshot](screen_shots/shot_01.png?raw=true)
+![screenshot](screen_shots/shot_02.png?raw=true)
+![screenshot](screen_shots/shot_03.png?raw=true)
+![screenshot](screen_shots/shot_04.png?raw=true)
